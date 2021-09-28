@@ -2,7 +2,7 @@ import requests
 
 def web_monitor(weblink):
     request = requests.Session()
-    r = request.get(weblink)
+    r = request.get(weblink, timeout=10)
     response = r.status_code 
     if response < 200 :
         print("Reposta informativa: Tudo ocorreu bem até agora e o cliente deve continuar com a requisição ou ignorar se já concluiu o que gostaria.")
@@ -18,6 +18,7 @@ def web_monitor(weblink):
 
 while True:
     ask = input("diga-me o link do site que você deseja monitorar:\n")
-    print("...\n")
-    web_monitor(ask)
+    print("O servidor será monitorado constantemente, caso deseje sair, pressione CTRL+C\n...\n")
+    while True:
+        web_monitor(ask)
     
