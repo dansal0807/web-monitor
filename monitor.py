@@ -2,7 +2,7 @@ import requests
 
 def web_monitor(weblink):
     request = requests.Session()
-    r = request.get(weblink, timeout=10)
+    r = request.get(weblink, timeout=5)
     response = r.status_code 
     if response < 200 :
         print("Reposta informativa: Tudo ocorreu bem até agora e o cliente deve continuar com a requisição ou ignorar se já concluiu o que gostaria.")
