@@ -14,8 +14,7 @@ def web_monitor(weblink):
         print("Resposta de erro do cliente: Bad request -  o servidor não entendeu a requisição, pois está com uma sintaxe inválida.")
     elif 500 <= response < 505:
         print("Resposta de erro do servidor: Internal server error - O servidor encontrou uma situação com a qual não sabe lidar.")
-
-
+        
 while True:
     ask = input("diga-me o link do site que você deseja monitorar:\n")
     print("O servidor será monitorado constantemente, caso deseje sair, pressione CTRL+C\n...\n")
